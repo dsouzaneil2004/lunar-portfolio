@@ -117,12 +117,11 @@
 
 .projects__pin-wrap {
   height: 100vh;
-  overflow: hidden;
+  /* NO overflow:hidden here — body's overflow-x:hidden clips
+     off-screen cards without cutting card bottoms vertically */
   display: flex;
   flex-direction: column;
-  /* Top padding creates breathing room for the header */
   padding-top: 5vh;
-  padding-bottom: 5vh;
   box-sizing: border-box;
 }
 
@@ -131,7 +130,6 @@
   margin-bottom: 2vh;
 }
 
-/* Responsive title — won't eat too much vertical space */
 .section--projects .section__label {
   margin-bottom: 0.4rem;
 }
@@ -142,23 +140,21 @@
   line-height: 1.1;
 }
 
-/* Track fills remaining vertical space */
 .projects__track {
   display: flex;
   gap: clamp(1rem, 2vw, 2rem);
   padding: 0 var(--container-pad);
   will-change: transform;
   width: max-content;
-  /* Height = full viewport minus top/bottom padding (10vh) minus header area */
-  height: calc(90vh - 100px);
-  align-items: stretch;
+  /* No height on the track — cards define their own height */
 }
 
 /* ── Project Card ── */
 .project-card {
-  /* Width fixed, height fills track exactly */
   width: clamp(300px, 28vw, 400px);
-  height: 100%;
+  /* clamp: never smaller than 220px, ideally 42% of viewport,
+     never taller than 320px. Always fits without overflow. */
+  height: clamp(220px, 42vh, 320px);
   flex-shrink: 0;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
