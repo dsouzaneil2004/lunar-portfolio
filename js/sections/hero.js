@@ -1,55 +1,35 @@
 function initHero() {
-  const moon        = document.getElementById('heroMoon');
-  const heroContent = document.getElementById('heroContent');
-  const scrollCue   = document.getElementById('scrollCue');
-  const hero        = document.getElementById('hero');
+  const moon    = document.getElementById('heroMoon');
+  const content = document.getElementById('heroContent');
+  const cue     = document.getElementById('scrollCue');
+  const hero    = document.getElementById('hero');
 
-  // ── ENTRANCE: plays once on load ──────────────────────────
-  const entrance = gsap.timeline({ delay: 1.6 });
+  // Galaxy controls moon + content opacity — start hidden
+  if (moon)    moon.style.opacity    = '0';
+  if (content) content.style.opacity = '0';
 
-  entrance
-    .fromTo(moon,
-      { scale: 1.06, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 2.8, ease: 'power2.out' }
-    )
-    .to('.hero__eyebrow',
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=1.8'
-    )
-    .to('.hero__name-first',
-      { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }, '-=0.7'
-    )
-    .to('.hero__name-last',
-      { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }, '-=1.0'
-    )
-    .to('.hero__tagline',
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.8'
-    )
-    .to(scrollCue,
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4'
-    );
+  // Scroll cue fades in after galaxy settles
+  gsap.fromTo(cue,
+    { opacity: 0, y: 8 },
+    { opacity: 1, y: 0, duration: 1.8, delay: 1.4, ease: 'power2.out' }
+  );
 
-  // ── SCROLL: moon zooms in as user scrolls ─────────────────
-  const scrollTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: hero,
-      start: 'top top',
-      end: '+=280%',      // Pinned for 280vh of scrolling
-      pin: true,
-      scrub: 2,           // 2s lag = cinematic, weighted feel
-      anticipatePin: 1,
-    }
+  // ScrollTrigger drives the entire galaxy experience
+  ScrollTrigger.create({
+    trigger:       hero,
+    start:         'top top',
+    end:           '+=380%',
+    pin:           true,
+    scrub:         2,
+    anticipatePin: 1,
+    onUpdate(self) {
+      if (window.setGalaxyProgress) window.setGalaxyProgress(self.progress);
+      // Hide scroll cue once user begins scrolling
+      if (self.progress > 0.03 && cue) {
+        gsap.to(cue, { opacity: 0, duration: 0.4, overwrite: true });
+      }
+    },
   });
-
-  scrollTl
-    .to(moon,
-      { scale: 7, ease: 'none', duration: 1 }, 0
-    )
-    .to(heroContent,
-      { opacity: 0, y: -50, ease: 'power2.in', duration: 0.3 }, 0
-    )
-    .to(scrollCue,
-      { opacity: 0, ease: 'none', duration: 0.12 }, 0
-    );
 }
 
 initHero();
