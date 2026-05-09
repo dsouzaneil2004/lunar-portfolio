@@ -1,0 +1,128 @@
+/* ============================================================
+   variables.css — Design DNA
+   Every color, font, size, and timing for the entire site.
+   Change a value here → it updates everywhere instantly.
+   ============================================================ */
+
+:root {
+
+  /* ─────────────────────────────────────────────────
+     COLOR PALETTE
+     Sampled from the blood moon photograph itself.
+  ───────────────────────────────────────────────── */
+
+  /* Backgrounds — deep space layers */
+  --color-void:          #03010a;   /* Absolute dark — body background */
+  --color-deep:          #0a0618;   /* Section background variation    */
+  --color-surface:       #110e22;   /* Elevated surface (cards, inputs)*/
+
+  /* Moon — warm, blood red tones from the photograph */
+  --color-moon-core:     #c1440e;   /* Deep blood red                  */
+  --color-moon-glow:     #ff6b35;   /* Outer warm glow                 */
+  --color-moon-warm:     #e8843a;   /* Mid tone — hover states         */
+  --color-moon-halo:     rgba(193, 68, 14, 0.15); /* Diffuse halo     */
+
+  /* Stars & Constellations */
+  --color-star:          #e8e0ff;   /* Star white (slightly warm)      */
+  --color-star-dim:      #9b92c8;   /* Distant stars                   */
+  --color-constellation: #a78bfa;   /* Constellation line color        */
+  --color-constellation-glow: rgba(167, 139, 250, 0.35);
+
+  /* Nebula atmosphere */
+  --color-nebula-purple: #4a1d8a;
+  --color-nebula-blue:   #1e1b4b;
+  --color-nebula-teal:   #0d7377;
+  --color-atmosphere:    rgba(20, 180, 120, 0.06); /* Green glow from photo */
+
+  /* Text */
+  --color-text:          #c9c2e0;   /* Body text                       */
+  --color-text-dim:      #6b6284;   /* Labels, captions                */
+  --color-text-bright:   #f0ecff;   /* Headings                        */
+  --color-text-accent:   #a78bfa;   /* Highlighted / accent text       */
+
+  /* UI */
+  --color-border:        rgba(167, 139, 250, 0.10);
+  --color-border-hover:  rgba(167, 139, 250, 0.30);
+  --color-input-bg:      rgba(255, 255, 255, 0.03);
+
+
+  /* ─────────────────────────────────────────────────
+     TYPOGRAPHY
+  ───────────────────────────────────────────────── */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;  /* Cinematic headings */
+  --font-body:    'Space Grotesk', system-ui, sans-serif; /* Clean body text   */
+
+  /* Type scale — fluid sizes using clamp() */
+  --text-xs:    0.70rem;    /* 11px  — micro labels          */
+  --text-sm:    0.85rem;    /* 14px  — small labels          */
+  --text-base:  1rem;       /* 16px  — body default          */
+  --text-lg:    1.25rem;    /* 20px  — larger body           */
+  --text-xl:    1.75rem;    /* 28px  — sub-headings          */
+  --text-2xl:   2.5rem;     /* 40px  — section headings      */
+  --text-3xl:   3.5rem;     /* 56px  — large headings        */
+  --text-4xl:   5rem;       /* 80px  — hero sub-text         */
+  --text-hero:  clamp(4rem, 10vw, 9rem);   /* Hero name — fully fluid */
+
+  /* Letter spacing */
+  --tracking-tight:  -0.03em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.12em;
+  --tracking-wider:   0.25em;
+  --tracking-widest:  0.4em;
+
+
+  /* ─────────────────────────────────────────────────
+     SPACING
+  ───────────────────────────────────────────────── */
+
+  --space-2xs: 0.25rem;   /*  4px */
+  --space-xs:  0.5rem;    /*  8px */
+  --space-sm:  1rem;      /* 16px */
+  --space-md:  2rem;      /* 32px */
+  --space-lg:  4rem;      /* 64px */
+  --space-xl:  6rem;      /* 96px */
+  --space-2xl: 10rem;     /* 160px */
+  --space-3xl: 14rem;     /* 224px */
+
+
+  /* ─────────────────────────────────────────────────
+     LAYOUT
+  ───────────────────────────────────────────────── */
+
+  --container-max: 1200px;
+  --container-pad: clamp(1.5rem, 5vw, 5rem);  /* Fluid side padding */
+
+
+  /* ─────────────────────────────────────────────────
+     ANIMATION
+     Named easing curves — consistent feel site-wide.
+  ───────────────────────────────────────────────── */
+
+  /* Easing curves */
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);    /* Dramatic, fast-in slow-out */
+  --ease-smooth:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-gentle:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce:    cubic-bezier(0.34, 1.56, 0.64, 1); /* Subtle overshoot          */
+
+  /* Durations */
+  --dur-fast:       0.25s;
+  --dur-base:       0.55s;
+  --dur-slow:       1s;
+  --dur-cinematic:  1.8s;
+
+
+  /* ─────────────────────────────────────────────────
+     Z-INDEX STACK
+     Controlled layering — nothing overlaps by accident.
+  ───────────────────────────────────────────────── */
+
+  --z-base:        1;
+  --z-canvas:      2;
+  --z-content:     10;
+  --z-nav:         40;
+  --z-overlay:     50;
+  --z-cursor:      100;
+  --z-loader:      200;
+
+}

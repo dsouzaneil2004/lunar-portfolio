@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neil Dsouza</title>
+  <meta name="description" content="Neil Dsouza — MCA Student, Developer, Creator." />
+
+  <!-- Google Fonts: Cormorant Garamond (cinematic) + Space Grotesk (clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS — order matters -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" class="loader">
+    <div class="loader__orb"></div>
+    <p class="loader__text">Entering the cosmos<span class="loader__dots">...</span></p>
+  </div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
+  <div class="cursor cursor--dot"  id="cursorDot"></div>
+  <div class="cursor cursor--ring" id="cursorRing"></div>
+
+  <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 00 + 01 — HERO + THE APPROACH
+         The blood moon lives here. The zoom happens here.
+    ───────────────────────────────────────────────── -->
+    <section id="hero" class="section section--hero">
+
+      <!-- Two canvas layers: particles behind, constellations in front -->
+      <canvas id="particleCanvas" class="canvas canvas--particles"></canvas>
+      <canvas id="constellationCanvas" class="canvas canvas--constellation"></canvas>
+
+      <!-- The blood moon image — this is what we zoom into -->
+      <div class="hero__image-wrap" id="heroImageWrap">
+        <img
+          id="heroMoon"
+          class="hero__moon"
+          src="assets/images/blood-moon.webp"
+          alt="Blood Moon — photograph by Neil Dsouza"
+        />
+      </div>
+
+      <!-- Title overlay — fades out as user scrolls -->
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow">MCA Student &nbsp;·&nbsp; Developer &nbsp;·&nbsp; Creator</p>
+        <h1 class="hero__name">
+          <span class="hero__name-first">Neil</span>
+          <span class="hero__name-last">Dsouza</span>
+        </h1>
+        <p class="hero__tagline">Exploring the universe,<br />one line of code at a time.</p>
+      </div>
+
+      <!-- Scroll cue — pulses gently to invite interaction -->
+      <div class="hero__scroll-cue" id="scrollCue">
+        <span class="scroll-cue__text">scroll</span>
+        <div class="scroll-cue__line"></div>
+      </div>
+
+    </section><!-- /hero -->
+
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 02 — ABOUT
+         "Who I Am" constellation forms here.
+    ───────────────────────────────────────────────── -->
+    <section id="about" class="section section--about" data-chapter="02">
+      <div class="container">
+        <span class="section__label">Chapter 02</span>
+        <h2 class="section__title reveal-title">Who I Am</h2>
+
+       <div class="about__body">
+  <p class="about__lead reveal-text">
+    I've always been drawn to things<br />
+    that reward <em>obsession.</em>
+  </p>
+  <p class="about__para reveal-text">
+    I started out wanting to make games. My laptop had other plans. That 
+    constraint pushed me toward the web — and somewhere in that pivot I 
+    discovered something I hadn't expected: a browser can be a canvas, not 
+    just a document. I build with every tool available to me, including AI, 
+    not as a shortcut but as a collaborator. An idea deserves to exist even 
+    if your hardware is modest.
+  </p>
+  <p class="about__para reveal-text">
+    I grew up in Madikeri, Coorg. On weekends I'm usually back there — 
+    forest trails, a 4x4, and problems that don't involve a screen. I 
+    photograph, I research engine combinations for cars I haven't built yet, 
+    and I write down game ideas I haven't coded yet. These aren't separate 
+    interests — they're all the same impulse: find something technical, 
+    understand it completely, then push it somewhere interesting.
+  </p>
+  <p class="about__para reveal-text">
+    I'm early in this journey. Second semester MCA at MS Ramaiah University, 
+    Bangalore. I haven't been recognised for much yet. I'm building toward 
+    that — one project at a time. This portfolio is the first proof.
+  </p>
+</div>
+      </div>
+    </section><!-- /about -->
+
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 03 — SKILLS
+         "What I Know" constellation forms here.
+    ───────────────────────────────────────────────── -->
+    <section id="skills" class="section section--skills" data-chapter="03">
+      <div class="container">
+        <span class="section__label">Chapter 03</span>
+        <h2 class="section__title reveal-title">What I Know</h2>
+        <div class="skills__grid" id="skillsGrid">
+          <!-- Injected by js/sections/skills.js -->
+        </div>
+      </div>
+    </section><!-- /skills -->
+
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 04 — PROJECTS
+         Horizontal scroll. "What I've Built" constellation.
+    ───────────────────────────────────────────────── -->
+    <section id="projects" class="section section--projects" data-chapter="04">
+      <div class="projects__pin-wrap" id="projectsPinWrap">
+        <div class="container">
+          <span class="section__label">Chapter 04</span>
+          <h2 class="section__title reveal-title">What I've Built</h2>
+        </div>
+        <div class="projects__track" id="projectsTrack">
+          <!-- Injected by js/sections/projects.js -->
+        </div>
+      </div>
+    </section><!-- /projects -->
+
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 05 — TIMELINE
+         "My Journey" constellation forms here.
+    ───────────────────────────────────────────────── -->
+    <section id="timeline" class="section section--timeline" data-chapter="05">
+      <div class="container">
+        <span class="section__label">Chapter 05</span>
+        <h2 class="section__title reveal-title">My Journey</h2>
+        <div class="timeline__track" id="timelineTrack">
+          <!-- Injected by js/sections/timeline.js -->
+        </div>
+      </div>
+    </section><!-- /timeline -->
+
+
+    <!-- ─────────────────────────────────────────────────
+         CHAPTER 06 — CONTACT
+         All constellations visible. The final destination.
+    ───────────────────────────────────────────────── -->
+    <section id="contact" class="section section--contact" data-chapter="06">
+      <div class="container">
+        <span class="section__label">Chapter 06</span>
+        <h2 class="section__title reveal-title">Send a Signal</h2>
+        <p class="contact__sub reveal-text">Let's build something extraordinary together.</p>
+
+        <div class="contact__form">
+          <div class="contact__field">
+            <label class="contact__label">Your Name</label>
+            <input type="text" class="contact__input" placeholder="Who are you?" />
+          </div>
+          <div class="contact__field">
+            <label class="contact__label">Your Email</label>
+            <input type="email" class="contact__input" placeholder="your@signal.space" />
+          </div>
+          <div class="contact__field">
+            <label class="contact__label">Your Message</label>
+            <textarea class="contact__input contact__textarea" placeholder="What's on your mind?"></textarea>
+          </div>
+          <button class="contact__btn" id="contactBtn">
+            <span class="contact__btn-text">Transmit Signal</span>
+            <span class="contact__btn-glow"></span>
+          </button>
+        </div>
+
+      </div>
+    </section><!-- /contact -->
+
+  </main><!-- /main -->
+
+
+  <!-- ===================== LIBRARIES (CDN) ===================== -->
+  <!-- GSAP core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- ScrollTrigger plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- ===================== OUR SCRIPTS (order matters!) ===================== -->
+  <script src="js/lenis.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/constellation.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/sections/hero.js"></script>
+  <script src="js/sections/about.js"></script>
+  <script src="js/sections/skills.js"></script>
+  <script src="js/sections/projects.js"></script>
+  <script src="js/sections/timeline.js"></script>
+  <script src="js/sections/contact.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

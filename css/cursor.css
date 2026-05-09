@@ -1,0 +1,36 @@
+.cursor {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+}
+
+.cursor--dot {
+  width: 5px;
+  height: 5px;
+  background: var(--color-star);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor--ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(232, 224, 255, 0.4);
+  transition: width 0.35s var(--ease-smooth),
+              height 0.35s var(--ease-smooth),
+              border-color 0.35s;
+}
+
+/* Cursor expands on hover over interactive elements */
+body.is-hovering .cursor--dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-moon-glow);
+}
+
+body.is-hovering .cursor--ring {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(255, 107, 53, 0.6);
+}
