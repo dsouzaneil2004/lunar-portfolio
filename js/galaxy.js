@@ -31,8 +31,8 @@
   // ── CONFIG ─────────────────────────────────────────────────
   // All tuning values in one place. Adjust freely.
   const C = {
-    STAR_COUNT_LO:   3500,   // Weak devices  (≤4 CPU cores)
-    STAR_COUNT_HI:   8000,   // Strong devices
+    STAR_COUNT_LO:   5500,   // Weak devices  (≤4 CPU cores)
+    STAR_COUNT_HI:  11000,   // Strong devices
 
     CAMERA_FOV:        65,
     CAMERA_Z_START:   420,   // Starting distance
@@ -236,7 +236,7 @@
   starGeo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
 
   const starMat = new THREE.PointsMaterial({
-    size:            2.4,
+    size:            2.8,
     map:             starSprite,         // Round glowing sprite
     vertexColors:    true,
     transparent:     true,
