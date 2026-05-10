@@ -338,11 +338,6 @@
       if (heroMoon)
         heroMoon.style.opacity = String(Math.min(exit * 1.6, 1));
 
-      if (heroContent)
-        heroContent.style.opacity = exit > 0.35
-          ? String(Math.min((exit - 0.35) / 0.65, 1))
-          : '0';
-
     } else {
       canvas.style.opacity = '1';
       if (heroMoon)    heroMoon.style.opacity    = '0';
