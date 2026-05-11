@@ -78,6 +78,7 @@
   text-transform: uppercase;
   color: var(--color-text-dim);
   margin-bottom: var(--space-md);
+  opacity: 0; /* hidden during galaxy — revealed on blood moon */
 }
 
 .hero__name {
